@@ -4,6 +4,7 @@ import { Environment, Lightformer, CameraControls } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { CyberCity } from "./CyberCity.jsx";
 import { VRButton, XR } from "@react-three/xr";
+import { PerspectiveCamera } from "@react-three/drei";
 
 export default function Experience() {
     return (
@@ -87,30 +88,6 @@ export default function Experience() {
                             onUpdate={(self) => self.lookAt(0, 0, 0)}
                         />
                     </Environment>
-
-                    <EffectComposer disableNormalPass>
-                        <Bloom
-                            luminanceThreshold={0.2}
-                            mipmapBlur
-                            luminanceSmoothing={0}
-                            intensity={0.5}
-                        />
-                    </EffectComposer>
-
-                    <CameraControls
-                        minZoom={1}
-                        maxZoom={3}
-                        polarRotateSpeed={-0.5}
-                        azimuthRotateSpeed={-0.5}
-                        mouseButtons={{
-                            left: 1,
-                            wheel: 16,
-                        }}
-                        touches={{
-                            one: 32,
-                            two: 512,
-                        }}
-                    />
                 </XR>
             </Canvas>
         </>
