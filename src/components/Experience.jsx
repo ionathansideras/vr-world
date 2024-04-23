@@ -14,10 +14,10 @@ export default function Experience() {
         <Canvas
             gl={{ logarithmicDepthBuffer: true, antialias: false }}
             dpr={[1, 1.5]}
-            camera={{ position: [0, 4, 15], fov: 25 }}
+            camera={{ position: [0, 0, 15], fov: 25 }}
             className="canvas"
         >
-            <City position={[0, 3, 12]} />
+            <City position={[0, -0.5, 12]} />
             {/* Render the Porsche component and pass the setLoading function */}
             <hemisphereLight intensity={0.5} />
 
