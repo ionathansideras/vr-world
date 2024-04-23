@@ -1,10 +1,8 @@
 import React from "react";
 import { Canvas } from "@react-three/fiber";
-import { Environment, Lightformer, CameraControls } from "@react-three/drei";
-import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import { Environment, Lightformer } from "@react-three/drei";
 import { CyberCity } from "./CyberCity.jsx";
 import { VRButton, XR } from "@react-three/xr";
-import { PerspectiveCamera } from "@react-three/drei";
 
 export default function Experience() {
     return (
@@ -28,7 +26,7 @@ export default function Experience() {
                         receiveShadow
                     />
                     {/* Render the Porsche component and pass the setLoading function */}
-                    <ambientLight intensity={0.1} color="purple" />
+                    <ambientLight intensity={0.5} color="purple" />
                     <Environment resolution={512}>
                         {/* Ceiling */}
 
