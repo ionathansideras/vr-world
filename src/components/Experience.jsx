@@ -3,34 +3,12 @@ import { Canvas } from "@react-three/fiber";
 import { Environment, Lightformer, CameraControls } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { CyberCity } from "./CyberCity.jsx";
-import {
-    VRButton,
-    ARButton,
-    XR,
-    Controllers,
-    Hands,
-    useXR,
-} from "@react-three/xr";
+import { VRButton, XR } from "@react-three/xr";
 
 export default function Experience() {
     return (
         <>
-            <VRButton
-                /* The type of `XRSession` to create */ mode={"VR"}
-                sessionInit={{
-                    optionalFeatures: [
-                        "local-floor",
-                        "bounded-floor",
-                        "hand-tracking",
-                        "layers",
-                    ],
-                }}
-                /** Whether this button should only enter an `XRSession`. Default is `false` */
-                enterOnly={false}
-                /** Whether this button should only exit an `XRSession`. Default is `false` */
-                exitOnly={false}
-                onError={(error) => console.error(error)}
-            />
+            <VRButton />
             <Canvas
                 gl={{ logarithmicDepthBuffer: true, antialias: false }}
                 camera={{
@@ -40,11 +18,7 @@ export default function Experience() {
                 shadows
                 style={{ backgroundColor: "black" }}
             >
-                <XR
-                    foveation={1} // Set to maximum foveation to improve performance
-                    frameRate={90} // Set an optimal framerate; adjust based on device testing
-                    referenceSpace="local-floor"
-                >
+                <XR>
                     {/* All your regular react-three-fiber elements go here */}
                     <CyberCity
                         position={[10, -2, 6]}
