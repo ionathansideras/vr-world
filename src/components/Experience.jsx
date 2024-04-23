@@ -20,7 +20,7 @@ export default function Experience() {
                 <XR>
                     {/* All your regular react-three-fiber elements go here */}
                     <CyberCity
-                        position={[10, -2, 6]}
+                        position={[10, -0.5, 6]}
                         rotation-y={1.2}
                         castShadow
                         receiveShadow
